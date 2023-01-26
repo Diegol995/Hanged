@@ -1,0 +1,4 @@
+no es necesario completo
+exponer frente al equipo
+6/02 Limite
+se puede usar texto plano pero es recomendable base de datos
