@@ -10,7 +10,6 @@
                 <div id="letters">
                     <?php
                     $abc = range('A', 'Z');
-                    $abc[26] = 'ñ';
                     foreach ($abc as $char) {
                         echo '<span class="letter">'. $char .'</span>';
                     }
@@ -30,24 +29,26 @@
                 </div>
                 <div id="the-word-was-div" class="display-none"></div>
                 <div id="play-again-div" class="display-none">
-                    <a href="index.php">Jugar otra partida</a>
+                    <a href="index.php" id="play-again">Jugar otra partida</a>
                 </div>
                 <div id="actual-points-div">
                     Puntos: <span id="actual-points"><?= $_SESSION['actualPoints'] ?></span>
                 </div>
                 <div id="record-points-div">
-                    Record: <span id="record-points"><?= $_SESSION['record'][0] ?></span>
+                    Record: <span id="record-points"><?= $_SESSION['record'] ?></span>
                 </div>
                 <form action="controller.php" method="POST">
                 <input type="hidden" name="action" value="1" />
                 <input type="hidden" name="level" value="<?php echo $_SESSION['level'] ?>">
-                    <div id="next-word-div" class="display-none">
-                        <input type="submit" value="Siguiente palabra">
+                    <div id="next-word-div">
+                        <input type="submit" value="Siguiente palabra" id="next-word"
+                        class="display-none">
                     </div>
                 </form>
             </div>
         </div>
         <script src="js/jquery-2.1.3.min.js"></script>
         <script src="js/script.js"></script> 
+        <script src="js/sweetalert2.js"></script> 
     </body>
 </html>

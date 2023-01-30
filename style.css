@@ -1,29 +1,52 @@
-#hanged-div
+body
 {
-	padding:10px;
-	text-align:center;
-	background-size:100% 100%;
+	background: rgb(249,255,0);
+background: linear-gradient(90deg, rgba(249,255,0,1) 0%, rgba(242,11,11,1) 100%);
 }
 
-#levels-div
+#hanged-div
+{
+	text-align:center;
+}
+
+#levels-div, #name-div, #playerName
 {
 	text-align:left;
 	max-width:450px;
 	margin:0 auto;
 	font-weight:bold;
+	font-size: 25px;
 }
 
-#submit-button
+#name-div
 {
-	width:200px;
-	height:50px;
+	margin-top: 10px;
+	text-align: center;
+}
+
+table, th, td
+{
+	margin:0 auto;
+	max-width:450px;
+	font-size: 25px;
+	border: 1px solid;
+	padding: 5px;
+}
+
+table
+{
+	border-collapse: collapse;
+}
+
+#submit-button, #next-word
+{
 	font-weight:bold;
 	margin:20px 0px;
-}
-
-label
-{
-	color:black;
+	font-size: 20px;
+	border: none;
+	border-radius: 5%;
+	padding: 5px;
+	cursor: pointer;
 }
 
 .letter
@@ -76,19 +99,7 @@ label
 	padding:20px;
 }
 
-#lives-left-div
-{
-	padding:20px;
-	font-size:35px;
-}
-
-#actual-points-div
-{
-	padding:20px;
-	font-size:35px;
-}
-
-#record-points-div
+#lives-left-div, #actual-points-div, #record-points-div
 {
 	padding:20px;
 	font-size:35px;
@@ -98,11 +109,6 @@ label
 {
 	font-weight:bold;
 	font-size:40px;
-}
-
-#hanged
-{
-	border:1px solid black;
 }
 
 #guessed-word-div
@@ -126,6 +132,17 @@ label
 	text-align:center;        
 }
 
+#play-again
+{
+	text-decoration:none; 
+	color: white;
+}
+
+#play-again:hover
+{
+	color:yellow;
+}
+
 .display-none
 {
 	display:none;
@@ -134,14 +151,4 @@ label
 .guessed-letter
 {
 	margin:0px 5px;
-	display:inline-block;
 }
-
-@media all and (max-width:500px)
-{
-	#hanged-div2 > div:nth-child(1), #hanged-div2 > div:nth-child(2), #hanged-div2 > div:nth-child(3)
-	{
-		float:none;
-		width:100%;
-	}       
-}  
