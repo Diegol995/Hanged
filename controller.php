@@ -28,6 +28,7 @@ switch ($action)
     case 0:
         $_SESSION['name'] = false;
         $_SESSION['actualPoints'] = 0;
+        $_SESSION['alert'] = "display-none";
         //Se consulta y se guarda el record de puntos
         $conn = conectar();
         $sql = "SELECT MAX(puntos) as record FROM records";
@@ -50,8 +51,20 @@ switch ($action)
         if ($_SESSION['name'] == false){
             if (isset($_POST['playerName']) && $_POST['playerName'] != "")
             {
-                $_SESSION['playerName'] = $_POST['playerName'];
-                $_SESSION['name'] = true;
+                $name = $_POST['playerName'];
+                $conn = conectar();
+                $sql = "SELECT jugador FROM records WHERE jugador = '$name'";
+                $result = $conn->prepare($sql);
+                $result->execute();
+                $matchName = $result->fetch(PDO::FETCH_ASSOC);
+                if ($matchName){
+                    $_SESSION['alert'] = '';
+                    require 'menu.php';
+                    break;
+                }else{
+                    $_SESSION['playerName'] = $_POST['playerName'];
+                    $_SESSION['name'] = true;
+                }
             }
             else
             {

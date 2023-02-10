@@ -23,6 +23,9 @@
                     <label >Ingrese su nombre: </label>
                     <input type="text" name="playerName" id="playerName"/>
                     <input type="submit" value="Jugar!!!" id="submit-button"/>
+                    <div class="<?php echo $_SESSION['alert'] ?>" style="background: red; color: white;">
+                        Ya hay un jugador con ese nombre
+                    </div>
                 </div>
             </form>
             <table id="table-topFive">
